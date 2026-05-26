@@ -1,5 +1,35 @@
 const characters = {
-	mb_zhangji: {
+	o_tadun: {
+		sex: "male",
+		group: "qun",
+		hp: 4,
+		skills: ["youlve", "lianxi"],
+	},
+	o_chenlan: {
+		sex: "male",
+		group: "qun",
+		hp: 4,
+		skills: ["jujun"],
+	},
+	o_meicheng: {
+		sex: "male",
+		group: "qun",
+		hp: 4,
+		skills: ["bixian"],
+	},
+	o_guanyu: {
+		sex: "male",
+		group: "shu",
+		hp: 4,
+		skills: ["mbwusheng", "mbyijue"],
+	},
+	o_sunquan: {
+		sex: "male",
+		group: "wu",
+		hp: 4,
+		skills: ["mbshizhong", "mbcaowei"],
+	},
+	mb_tw_zhangji: {
 		sex: "male",
 		group: "wei",
 		hp: 3,

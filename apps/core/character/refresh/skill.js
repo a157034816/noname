@@ -11302,7 +11302,7 @@ const skills = {
 		selectTarget: -1,
 		async content(event, trigger, player) {
 			// step 0
-			const target = event.dying;
+			const target = event.targets[0];
 			const result = await player.chooseCardButton(get.translation("rechunlao"), player.getExpansions("rechunlao"), true).forResult();
 			// step 1
 			if (result.bool) {
@@ -13786,6 +13786,14 @@ const skills = {
 					}
 				},
 				target(card, player, target) {
+					let name;
+					if (typeof card == "object") {
+						if (card.viewAs) {
+							name = card.viewAs;
+						} else {
+							name = get.name(card);
+						}
+					}
 					if (name == "lebu" || name == "bingliang") {
 						return [target.hasSkillTag("rejudge") ? 0.4 : 1, 2, target.hasSkillTag("rejudge") ? 0.4 : 1, 0];
 					}
@@ -14871,6 +14879,7 @@ const skills = {
 			std_guanxing: "wusheng_guanzhang",
 			ty_guanxing: "wusheng_guanzhang",
 			ol_guanzhang: "wusheng_ol_guanzhang",
+			re_baosanniang: "wusheng_re_baosanniang",
 		},
 		enable: ["chooseToRespond", "chooseToUse"],
 		filterCard(card, player) {
